@@ -4,6 +4,7 @@ import Bold from "@tiptap/extension-bold";
 import BulletList from "@tiptap/extension-bullet-list";
 import Code from "@tiptap/extension-code";
 import CodeBlock from "@tiptap/extension-code-block";
+import Color from "@tiptap/extension-color";
 import Dropcursor from "@tiptap/extension-dropcursor";
 import Gapcursor from "@tiptap/extension-gapcursor";
 import HardBreak from "@tiptap/extension-hard-break";
@@ -17,11 +18,9 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Placeholder from "@tiptap/extension-placeholder";
 import Strike from "@tiptap/extension-strike";
 import Text from "@tiptap/extension-text";
-
-import Color from "@tiptap/extension-color";
 import TextStyle from "@tiptap/extension-text-style";
 import Underline from "@tiptap/extension-underline";
-import { Document, Draggable } from ".";
+import { Description, Document, Draggable, Title } from ".";
 
 type GetExtensionsProps = {
   openLinkModal: () => void;
@@ -33,8 +32,8 @@ export const getExtensions = ({
   return [
     // Custom Extensions
     Document,
-    // Title,
-    // Description,
+    Title,
+    Description,
     Draggable,
 
     // Starter Kit Nodes

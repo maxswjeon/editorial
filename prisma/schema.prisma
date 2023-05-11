@@ -9,3 +9,23 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Metadata {
+  version   Int      @id @default(autoincrement())
+  data      String
+  createdAt DateTime @default(now())
+}
+
+model Config {
+  version   Int      @id @default(autoincrement())
+  data      String
+  createdAt DateTime @default(now())
+}
+
+model Page {
+  id        Int       @id @default(autoincrement())
+  template  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}

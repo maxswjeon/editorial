@@ -45,6 +45,8 @@ export const DraggableNodeView = ({ node, getPos, editor }: NodeViewProps) => {
         </button>
         <button
           type="button"
+          draggable
+          data-drag-handle
           className="flex justify-center items-center hover:bg-gray-200 w-4 h-6 rounded-sm opacity-0 ease-in-out group-hover:opacity-100"
         >
           <HandleIcon className="" />

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "4.14.0",
     "@tiptap/core": "^2.0.3",
     "@tiptap/extension-blockquote": "^2.0.3",
     "@tiptap/extension-bold": "^2.0.3",
@@ -38,18 +39,25 @@
     "@types/react-dom": "18.2.1",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
-    "next": "13.3.1",
+    "handlebars": "^4.7.7",
+    "html-react-parser": "^3.0.16",
+    "mime-types": "^2.1.35",
+    "next": "13.4.1",
+    "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-is": "^18.2.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {
     "@svgr/webpack": "^7.0.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/mime-types": "^2.1.1",
+    "@types/react-is": "^18.2.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
-    "prisma": "^4.13.0",
+    "prisma": "^4.14.0",
     "tailwindcss": "^3.3.2"
   }
 }
