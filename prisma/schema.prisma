@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -22,10 +19,56 @@ model Config {
   createdAt DateTime @default(now())
 }
 
+model User {
+  id        String    @id @default(uuid()) @db.Uuid
+  email     String    @unique
+  password  String?
+  fullName  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  ssoData   String?
+  posts     Post[]
+}
+
 model Page {
-  id        Int       @id @default(autoincrement())
+  id        String    @id @default(uuid()) @db.Uuid
   template  String
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   deletedAt DateTime?
+}
+
+model Post {
+  id          String    @id @default(uuid()) @db.Uuid
+  title       String
+  description String
+  slug        String
+  content     String
+  createdBy   User      @relation(fields: [createdById], references: [id])
+  createdById String    @db.Uuid
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  publishedAt DateTime?
+  deletedAt   DateTime?
+}
+
+enum AuthStrategyType {
+  LOCAL
+  OAUTH2
+  SAML
+}
+
+model AuthStrategy {
+  id     String           @id @default(uuid()) @db.Uuid
+  name   String           @unique
+  type   AuthStrategyType
+  config String?
+}
+
+model AdminAuthStrategy {
+  id     String           @id @default(uuid()) @db.Uuid
+  name   String           @unique
+  type   AuthStrategyType
+  config String?
 }

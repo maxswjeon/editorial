@@ -26,6 +26,9 @@
       ],
       "~/*": [
         "../public/*"
+      ],
+      "@tiptap/*": [
+        "components/tiptap/*"
       ]
     },
     "plugins": [

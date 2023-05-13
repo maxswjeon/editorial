@@ -6,6 +6,7 @@ import { prisma } from "lib/prisma";
 import { themeFile } from "utils/path";
 
 import "normalize.css";
+import "styles/globals.css";
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   const configInfo = await prisma.metadata.findFirst({

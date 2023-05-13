@@ -1,5 +1,3 @@
-import { Tiptap } from "components/tiptap";
-
 type Props = {
   params: {
     id: string;
@@ -7,9 +5,5 @@ type Props = {
 };
 
 export default async function EditPage({ params }: Props) {
-  return (
-    <main className="mt-12">
-      <Tiptap />
-    </main>
-  );
+  return <main className="mt-12"></main>;
 }

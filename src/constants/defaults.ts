@@ -11,26 +11,3 @@ export const defaultMetadata = {
 } satisfies Metadata;
 
 export type Config = typeof defaultConfig;
-
-export const defaultContent = {
-  type: "document",
-  content: [
-    {
-      type: "title",
-      attrs: {
-        level: 1,
-      },
-    },
-    {
-      type: "description",
-    },
-    {
-      type: "draggable",
-      content: [
-        {
-          type: "paragraph",
-        },
-      ],
-    },
-  ],
-};

@@ -20,7 +20,7 @@ const handleParseResult = (result: ParseResult) => {
   return result;
 };
 
-export function DynamicLayout({ layout, child }: Props) {
+export function ThemeLayout({ layout, child }: Props) {
   const layoutString = renderToString(handleParseResult(layout));
 
   const childString = child ? renderToString(child) : "";
